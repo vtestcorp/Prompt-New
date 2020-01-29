@@ -1,10 +1,20 @@
 package com.PS.pages;
 
+import static com.PS.util.Utility.excelReadHssf;
+
+import java.io.IOException;
+
 import org.apache.commons.math3.optim.linear.Relationship;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
 import com.PS.base.Base;
+import com.PS.util.Utility;
+import com.relevantcodes.extentreports.LogStatus;
 public class CustomerDetails_Page extends Base {
 	@FindBy(xpath = "//input[@placeholder='Email']")
 	public WebElement email;
@@ -466,5 +476,251 @@ public class CustomerDetails_Page extends Base {
 
 	public CustomerDetails_Page() {
 		PageFactory.initElements(driver, this);
+	}
+	
+	public void updateCustomer() throws IOException, InterruptedException
+	{
+		Utility.click(CustomersMenuBtn);
+		Thread.sleep(1000);
+		Utility.implicitwait();
+		Utility.click(update_customer_menu_button_for_first_row);
+		Thread.sleep(2000);
+		Utility.click(edit_cust_option);
+		Thread.sleep(2000);
+
+		String newname=Utility.updatecompname(companyName.getAttribute("value"));
+		Utility.enterText(companyName, newname);
+		Utility.JS_Scrolldown(save);
+		Thread.sleep(2000);
+		
+		Utility.click(save);
+		Thread.sleep(2000);
+		Utility.click(save1);
+
+
+		String customerName = labelFirstCustomerName.getText();
+
+
+
+		Utility.enterText(textBoxSearch, customerName);
+		if (customerName.equals(labelFirstCustomerName.getText())) {
+			et.log(LogStatus.PASS, "Matching customer is displayed",
+					et.addScreenCapture(pass("Matching customer is displayed")));
+		} else {
+			et.log(LogStatus.FAIL, "Matching customer is not displayed",
+					et.addScreenCapture(fail("Matching customer is not displayed")));
+		}
+	}
+	public void uploadCustomer() throws InterruptedException, IOException
+	{
+		String totalCustCount = null;
+		
+		Utility.click(CustomersMenuBtn);
+		Thread.sleep(1000);
+
+		Utility.JS_Scrolldown(totalCustomerCount);
+		Thread.sleep(1000);
+		if (totalCustomerCount.isDisplayed()) {
+			totalCustCount = totalCustomerCount.getText();
+			System.out.println("Expected " + totalCustCount);
+		} else {
+			System.out.println("Not Displayed");
+		}
+
+		new Actions(driver).moveToElement(NewCustomer).perform();
+		Utility.click(newCustomerDropdown);
+//-----------------------------------not working for now----------------------------------------------------------------------------
+//		Thread.sleep(2000);
+//		Utility.click(Industry);
+//		Thread.sleep(2000);
+////		String path=System.getProperty("user.dir") + prop.getProperty("ImportCustomers1");
+////		System.out.println(""+path);
+//		System.out.println(""	+Utility.excelReadHssf(1, 1,"ImportCustomers1"));
+//
+//		driver.findElement(By.xpath("//li/span[text()='"+Utility.excelReadHssf(1, 1, "ImportCustomers1")+"']")).click();
+//
+//		Utility.click(customerType);
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//li/span[text()='"+Utility.excelReadHssf(1, 2, "ImportCustomers1")+"']")).click();
+//
+//		Utility.click(customerSource);
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//li/span[text()='"+Utility.excelReadHssf(1, 5, "ImportCustomers1")+"']")).click();
+//
+//		Utility.click(paymentTerm);
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//li/span[text()='"+Utility.excelReadHssf(1, 6, "ImportCustomers1")+"']")).click();
+//-------------------------------------------------------------------------------------------------------------------------------	
+		Thread.sleep(3000);
+		Utility.click(Nextbtn);
+		Utility.enterText(chooseFile, System.getProperty("user.dir") + prop.getProperty("ImportCustomers1"));
+		Thread.sleep(2000);
+		Utility.click(Nextbtn2);
+		Thread.sleep(2000);
+		Utility.ActionClick(close);
+		
+		Utility.enterText(searchbox, excelReadHssf(1, 0, "ImportCustomers1"));
+		boolean custext;
+		Thread.sleep(2000);
+		try {
+			driver.findElement(By.xpath("//a[text()='"+ excelReadHssf(1, 0, "ImportCustomers1")+"']"));
+			custext=true;
+		}
+		catch(Exception e)
+		{
+			custext=false;
+		}
+		Thread.sleep(1000);
+		try {
+			Assert.assertEquals(custext, true,"Customer not created");
+			System.out.println("Search matched");
+			et.log(LogStatus.PASS, "New created customer name found", et.addScreenCapture(fail("New created customer name found")));
+		} catch (Exception ex) {
+			et.log(LogStatus.FAIL, "New created customer name found", et.addScreenCapture(pass("New created customer name not found")));
+			System.out.println("search mismatched ");
+		}
+
+		String totalCustCountCurrent = totalCustomerCount.getText();
+		System.out.println("Actual" + totalCustCountCurrent);
+		Thread.sleep(1000);
+		try {
+
+			Assert.assertNotEquals(totalCustCount, totalCustCountCurrent);
+			System.out.println("count matched");
+			et.log(LogStatus.PASS, "New Cusomter Created and count got increased",
+					et.addScreenCapture(pass("New Customer is Created and count got increased")));
+		}
+		catch (Exception ex) {
+			System.out.println("count mismatched ");
+			et.log(LogStatus.FAIL, "Customer Count hasn't increased",
+					et.addScreenCapture(fail("Customer Count hasn't increased")));
+		}
+
+		Thread.sleep(1000);
+	}
+	public void createCustomer() throws InterruptedException, IOException
+	{
+		Utility.click(CustomersMenuBtn);
+		Thread.sleep(1000);
+
+		Utility.JS_Scrolldown(totalCustomerCount);
+		Thread.sleep(1000);
+		String totalCustCount = null;
+		if (totalCustomerCount.isDisplayed()) {
+			totalCustCount = totalCustomerCount.getText();
+			System.out.println("Expected " + totalCustCount);
+		} else {
+			System.out.println("Not Displayed");
+		}
+
+		Thread.sleep(1000);
+		Utility.click(NewCustomer);
+		Thread.sleep(2000);
+
+		Utility.ExcelReadAndWrite(2, 2);
+		Utility.implicitwait();
+		Utility.enterText(companyName, Utility.excelRead(2, 2, "CustomerDetails"));
+		Thread.sleep(2000);
+
+		Utility.click(paymentTerm);
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//li[@name='"+Utility.excelRead(2, 3, "CustomerDetails")+"']")).click();
+
+		Utility.click(customerType);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//li[@name='"+Utility.excelRead(2, 4, "CustomerDetails")+"']")).click();
+
+		Utility.enterText(companyWebsite, Utility.excelRead(2, 5,"CustomerDetails"));
+
+		Utility.click(customerSource);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//li[@name='"+Utility.excelRead(2, 6, "CustomerDetails")+"']")).click();
+
+
+		Utility.click(rateYourCompany);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[@name='"+Utility.excelReadInt(2, 7, "CustomerDetails")+"']")).click();
+
+
+		Utility.click(Industry);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//li[@name='"+Utility.excelRead(2, 8, "CustomerDetails")+"']")).click();
+
+//		Utility.enterText(relationship,Utility.Date());
+		relationship.click();
+		Thread.sleep(2000);
+		relationship_date.click();
+
+		Utility.enterText(streetName, Utility.excelRead(2, 9, "CustomerDetails"));
+
+		Utility.enterText(city, Utility.excelRead(2, 10, "CustomerDetails"));
+
+		Utility.enterText(zipcode, Utility.excelReadInt(2, 12, "CustomerDetails"));
+
+		Utility.JS_Scrolldown(save);
+		country.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//li/span[text()='India']")).click();
+		Thread.sleep(5000);
+
+
+
+		state.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//li[@name='"+Utility.excelRead(2, 11, "CustomerDetails")+"']/span[text()='"+Utility.excelRead(2, 11, "CustomerDetails")+"']")).click();
+
+		sameAsBillingAddress.click();
+		Thread.sleep(1000);
+		Utility.click(save);
+		Thread.sleep(3000);
+		Utility.click(save1);
+		Thread.sleep(3000);
+
+
+
+
+		String totalCustCountCurrent = totalCustomerCount.getText();
+		System.out.println("Actual" + totalCustCountCurrent);
+		Thread.sleep(1000);
+		try {
+
+			Assert.assertNotEquals(totalCustCount, totalCustCountCurrent);
+			System.out.println("count matched");
+			et.log(LogStatus.PASS, "New Cusomter Created and count got increased",
+					et.addScreenCapture(pass("New Customer is Created and count got increased")));
+
+		}
+		catch (Exception ex) {
+			System.out.println("count mismatched ");
+			et.log(LogStatus.FAIL, "Customer Count hasn't increased",
+					et.addScreenCapture(fail("Customer Count hasn't increased")));
+		}
+
+		Thread.sleep(1000);
+
+//
+//		// Search by Customer name
+
+		Utility.enterText(searchbox, Utility.excelRead(2, 2, "CustomerDetails"));
+		boolean custext;
+		Thread.sleep(2000);
+		try {
+			driver.findElement(By.xpath("//a[text()='"+Utility.excelRead(2, 2, "CustomerDetails")+"']"));
+			custext=true;
+		}
+		catch(Exception e)
+		{
+			custext=false;
+		}
+		Thread.sleep(1000);
+		try {
+			Assert.assertEquals(custext, true,"Customer not created");
+			System.out.println("Search matched");
+			et.log(LogStatus.PASS, "New created customer name found", et.addScreenCapture(fail("New created customer name found")));
+		} catch (Exception ex) {
+			et.log(LogStatus.FAIL, "New created customer name found", et.addScreenCapture(pass("New created customer name not found")));
+			System.out.println("search mismatched ");
+		}
 	}
 }

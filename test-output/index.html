@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,11 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-<<<<<<< HEAD
-                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--1248100208\testng-customsuite.xml</span>
-=======
-                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse--535740524\testng-customsuite.xml</span>
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
+                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse-221077032\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -95,25 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-<<<<<<< HEAD
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.PS.tests.NcustomerDetails" hash-for-method="customerUpdate">customerUpdate</a> <!-- method navigator-link -->
-=======
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.PS.tests.NcustomerDetails" hash-for-method="CreateCustomer">CreateCustomer</a> <!-- method navigator-link -->
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -125,35 +117,65 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.PS.tests.NcustomerDetails</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-<<<<<<< HEAD
-                  <a name="customerUpdate">
-                  </a> <!-- customerUpdate -->
-                  <span class="method-name">customerUpdate</span>
-=======
                   <a name="CreateCustomer">
                   </a> <!-- CreateCustomer -->
                   <span class="method-name">CreateCustomer</span>
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
+                  <div class="stack-trace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy14.sendKeys(Unknown Source)
+	at com.PS.pages.login.login(login.java:31)
+	at com.PS.tests.NcustomerDetails.CreateCustomer(NcustomerDetails.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--1248100208\testng-customsuite.xml</span>
-=======
-            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse--535740524\testng-customsuite.xml</span>
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
+            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse-221077032\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -204,26 +226,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-<<<<<<< HEAD
-data.setCell(0, 1, 'customerUpdate')
-=======
 data.setCell(0, 1, 'CreateCustomer')
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
 data.setCell(0, 2, 'com.PS.tests.NcustomerDetails')
-<<<<<<< HEAD
-data.setCell(0, 3, 21330);
-=======
-data.setCell(0, 3, 18694);
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
+data.setCell(0, 3, 251);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-<<<<<<< HEAD
-              <span class="suite-total-time">Total running time: 21 seconds</span>
-=======
-              <span class="suite-total-time">Total running time: 18 seconds</span>
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
+              <span class="suite-total-time">Total running time: 251 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -238,29 +248,22 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-<<<<<<< HEAD
             <span class="header-content">4 ignored methods</span>
-=======
-            <span class="header-content">0 ignored methods</span>
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-<<<<<<< HEAD
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.PS.tests.NcustomerDetails</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">createSalesInvoice</span>
                 <br/>
-                <span class="ignored-method-name">CreateCustomer</span>
-                <br/>
                 <span class="ignored-method-name">customerSearch</span>
+                <br/>
+                <span class="ignored-method-name">customerUpdate</span>
                 <br/>
                 <span class="ignored-method-name">UploadCustomer</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
-=======
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -276,36 +279,21 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setup(Chrome)</span>
-<<<<<<< HEAD
-                <span class="method-start">217 ms</span>
-=======
-                <span class="method-start">255 ms</span>
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
+                <span class="method-start">390 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-<<<<<<< HEAD
-                <span class="method-name">customerUpdate</span>
-                <span class="method-start">11638 ms</span>
-=======
+                <img src="failed.png">
+                </img>
                 <span class="method-name">CreateCustomer</span>
-                <span class="method-start">16863 ms</span>
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
+                <span class="method-start">21639 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-<<<<<<< HEAD
-                <span class="method-start">33294 ms</span>
-=======
-                <span class="method-start">36042 ms</span>
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
+                <span class="method-start">23160 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">closeReport</span>
-<<<<<<< HEAD
-                <span class="method-start">33345 ms</span>
-=======
-                <span class="method-start">36082 ms</span>
->>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
+                <span class="method-start">23267 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
