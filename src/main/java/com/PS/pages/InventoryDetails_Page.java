@@ -45,6 +45,30 @@ public class InventoryDetails_Page extends Base {
 	@FindBy(xpath = "//button[text()='Submit']")
 	public WebElement buttonPopUpSubmit;
 	
+	@FindBy(xpath = "//span[text()='Variants']")
+	public WebElement labelVariants;
+	
+	@FindBy(xpath = "//span[text()='Product Details']")
+	public WebElement labelProductDetails;
+	
+	@FindBy(xpath = "//span[text()='Valuation']")
+	public WebElement labelValuation;
+	
+	@FindBy(xpath = "//span[text()='SKU']")
+	public WebElement labelSKU;
+	
+	@FindBy(xpath = "//span[text()='Category']")
+	public WebElement labelCategory;
+	
+	@FindBy(xpath = "//span[text()='HSN Code']")
+	public WebElement labelHSNCode;
+	
+	@FindBy(xpath = "//span[text()='Current Stock']")
+	public WebElement labelCurrentStock;
+	
+	@FindBy(xpath = "//span[text()='Warehouse']")
+	public WebElement labelWarehouse;
+	
 	public InventoryDetails_Page() {
 		PageFactory.initElements(driver, this);
 	}

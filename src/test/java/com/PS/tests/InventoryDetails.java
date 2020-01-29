@@ -1,5 +1,7 @@
 package com.PS.tests;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -76,4 +78,27 @@ public class InventoryDetails extends Base {
 
 	}
 
+	@Test(enabled = true)
+	public void viewInventory() throws InterruptedException, IOException {
+
+		Utility.logger();
+		inventoryDetails_Page = new InventoryDetails_Page();
+		create_extent_test("VIEW INVENTORY");
+		new login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
+		Thread.sleep(4000);
+		Utility.implicitwait();
+		Utility.click(inventoryDetails_Page.inventoryMenuBtn);
+		Thread.sleep(1000);
+		Utility.click(inventoryDetails_Page.productsSubMenuBtn);
+		Thread.sleep(2000);
+		assertEquals(inventoryDetails_Page.labelProductDetails.getText(), "Product Details");
+		assertEquals(inventoryDetails_Page.labelVariants.getText(), "Variants");
+		assertEquals(inventoryDetails_Page.labelValuation.getText(), "Valuation");
+		assertEquals(inventoryDetails_Page.labelSKU.getText(), "SKU");
+		assertEquals(inventoryDetails_Page.labelCategory.getText(), "Category");
+		assertEquals(inventoryDetails_Page.labelHSNCode.getText(), "HSN Code");
+		assertEquals(inventoryDetails_Page.labelCurrentStock.getText(), "Current Stock");
+		assertEquals(inventoryDetails_Page.labelWarehouse.getText(), "Warehouse");
+
+	}
 }
