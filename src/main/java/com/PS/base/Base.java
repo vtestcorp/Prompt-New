@@ -17,9 +17,12 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -27,7 +30,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import com.PS.pages.CustomerDetails_Page;
+import com.PS.pages.CustomerDetailsPage;
 import com.PS.util.Utility;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -41,6 +44,22 @@ public class Base {
 	public static Logger log;
 	public static String s1;
 	public static String Report_Path = null;
+	
+	
+			
+		@FindBy(xpath = "//input[@placeholder='Email']")
+		public WebElement email;
+
+		@FindBy(xpath = "//input[@placeholder='Password']")
+		public WebElement password;
+
+		@FindBy(xpath = "//button[text()='Log in']")
+		public WebElement LoginBtn;
+		
+		@FindBy(xpath = "//h4[contains(text(),'Log in to get started or')]")
+		public WebElement lheader;
+	
+	
 
 	public Base() {
 		try {
@@ -87,10 +106,24 @@ public class Base {
 		log.debug("Debug");
 		
 	}
+	
+	
+	public void login()
+	{
+		Assert.assertEquals(lheader.isDisplayed(), true,"No login screen found");
+		email.sendKeys(Utility.excelRead(2, 0, "CustomerDetails"));
+		password.sendKeys(Utility.excelRead(2, 1, "CustomerDetails"));
+		LoginBtn.click();
+			
+	//	Assert.assertEquals(lheader.isDisplayed(), false,"Not logged in");
+	}
+	
+	
+	
 
 	public static void create_ext_report(String reportName) {
-		String Report_Timestamp = "Extent_Report" + (LocalDateTime.now()).getHour() + "_"
-				+ (LocalDateTime.now()).getMinute() + "_" + (LocalDateTime.now()).getSecond();
+		String Report_Timestamp = "Extent_Report" + (LocalDateTime.now()).getDayOfMonth() + "_"
+				+ (LocalDateTime.now()).getMonthValue() + "_" + (LocalDateTime.now()).getYear()+ "_" + (LocalDateTime.now()).getHour();
 
 		Report_Path ="Report\\"+"_" + Report_Timestamp;
 

@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import com.PS.base.Base;
 import com.PS.pages.InventoryDetails_Page;
-import com.PS.pages.login;
+import com.PS.pages.Login;
 import com.PS.util.Utility;
 import com.TestNG.listener.CustomListener;
 import com.relevantcodes.extentreports.LogStatus;
@@ -23,7 +23,7 @@ public class InventoryDetails extends Base {
 		Utility.logger();
 		inventoryDetails_Page = new InventoryDetails_Page();
 		create_extent_test("PRODUCT SEARCH");
-		new login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
+		new Login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
 		Thread.sleep(4000);
 		Utility.implicitwait();
 		Utility.click(inventoryDetails_Page.inventoryMenuBtn);
@@ -47,7 +47,7 @@ public class InventoryDetails extends Base {
 		Utility.logger();
 		inventoryDetails_Page = new InventoryDetails_Page();
 		create_extent_test("CREATE INVENTORY");
-		new login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
+		new Login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
 		Thread.sleep(4000);
 		Utility.implicitwait();
 		Utility.click(inventoryDetails_Page.inventoryMenuBtn);
@@ -84,7 +84,7 @@ public class InventoryDetails extends Base {
 		Utility.logger();
 		inventoryDetails_Page = new InventoryDetails_Page();
 		create_extent_test("VIEW INVENTORY");
-		new login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
+		new Login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
 		Thread.sleep(4000);
 		Utility.implicitwait();
 		Utility.click(inventoryDetails_Page.inventoryMenuBtn);

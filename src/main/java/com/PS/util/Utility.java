@@ -1,4 +1,10 @@
 package com.PS.util;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,7 +26,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.PS.base.Base;
-import com.PS.pages.CustomerDetails_Page;
+import com.PS.pages.CustomerDetailsPage;
 import com.relevantcodes.extentreports.LogStatus;
 public class Utility extends Base {
 	public static Date date;
@@ -142,6 +148,7 @@ public class Utility extends Base {
 	public static String excelRead(int row, int cell, String File) {
 		try {
 			File src = new File(prop.getProperty(File));
+			
 			FileInputStream fis = new FileInputStream(src);
 			XSSFWorkbook wb = new XSSFWorkbook(fis);
 			XSSFSheet sh1 = wb.getSheetAt(0);
@@ -156,7 +163,7 @@ public class Utility extends Base {
 
 	public static String excelReadHssf(int row, int cell, String File) {
 		try {
-			File src = new File(System.getProperty("user.dir")+prop.getProperty(File));
+			File src = new File(prop.getProperty(File));
 			FileInputStream fis = new FileInputStream(src);
 			HSSFWorkbook wb = new HSSFWorkbook(fis);
 			HSSFSheet sh1 = wb.getSheetAt(0);
@@ -232,4 +239,21 @@ public class Utility extends Base {
 		String s1 = q + datetext;
 		return s1;
 	}
+	
+	
+	public static  String updatesuppName(String oldName) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		String datetext = dateFormat.format(date);
+
+		String q = oldName.substring(0, 6);
+		String s1 = q + datetext;
+		return s1;
+	}
+	
+	
+	
+	
+	
+	
 }

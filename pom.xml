@@ -6,6 +6,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <build>
   
+  
+
+  
 		<plugins>
 			<!-- Compiler plug-in -->
 			<plugin>
@@ -94,34 +97,39 @@
     <version>2.6.12</version>
       </dependency>
     
+   
+      
       <dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi</artifactId>
-    <version>4.0.1</version>
-      </dependency>
+	<groupId>org.apache.poi</groupId>
+	<artifactId>poi</artifactId>
+	<version>4.1.1</version>
+	</dependency>
+      
+      
+      
     
       <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml</artifactId>
-    <version>4.0.1</version>
+    <version>4.1.1</version>
       </dependency>
     
       <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-scratchpad</artifactId>
-    <version>4.0.1</version>
+    <version>4.1.1</version>
       </dependency>
     
       <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml-schemas</artifactId>
-    <version>4.0.1</version>
+    <version>4.1.1</version>
       </dependency>
     
       <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-excelant</artifactId>
-    <version>4.0.1</version>
+    <version>4.1.1</version>
       </dependency>
       
       <dependency>

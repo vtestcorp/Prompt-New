@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.PS.tests.NcustomerDetails">
+      <class name="com.PS.tests.CustomerDetailsTest">
         <methods>
           <include name="createReport"/>
-          <include name="CreateCustomer"/>
           <include name="tearDown"/>
           <include name="setup"/>
+          <include name="CreateCustomer"/>
           <include name="closeReport"/>
         </methods>
-      </class> <!-- com.PS.tests.NcustomerDetails -->
+      </class> <!-- com.PS.tests.CustomerDetailsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
