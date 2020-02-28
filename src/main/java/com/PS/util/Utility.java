@@ -1,4 +1,4 @@
-package com.PS.util;
+	package com.PS.util;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -53,6 +53,8 @@ public class Utility extends Base {
 	public static void click(WebElement element) {
 		element.click();
 	}
+	
+	
 
 	public static void ActionClick(WebElement element) {
 		act = new Actions(driver);
@@ -103,7 +105,7 @@ public class Utility extends Base {
 		return currentURL;
 	}
 	public static void implicitwait() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
 		Thread.sleep(2000);
 	}
 

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="7" passed="5">
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite 1" duration-ms="311392" started-at="2020-02-14T12:28:29 IST" finished-at="2020-02-14T12:33:40 IST">
+  <suite name="Default suite" duration-ms="49015" started-at="2020-02-27T13:07:48 IST" finished-at="2020-02-27T13:08:37 IST">
     <groups>
     </groups>
-    <test name="PS Test" duration-ms="311392" started-at="2020-02-14T12:28:29 IST" finished-at="2020-02-14T12:33:40 IST">
-      <class name="com.PS.tests.CustomerDetailsTest">
-        <test-method status="PASS" signature="createReport()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="createReport" is-config="true" duration-ms="163" started-at="2020-02-14T12:28:29 IST" finished-at="2020-02-14T12:28:29 IST">
+    <test name="Default test" duration-ms="49015" started-at="2020-02-27T13:07:48 IST" finished-at="2020-02-27T13:08:37 IST">
+      <class name="com.PS.tests.SalesDetailsTest">
+        <test-method status="PASS" signature="createReport()[pri:0, instance:com.PS.tests.SalesDetailsTest@2bbf4b8b]" name="createReport" is-config="true" duration-ms="248" started-at="2020-02-27T13:07:47 IST" finished-at="2020-02-27T13:07:48 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createReport -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="setup" is-config="true" duration-ms="29779" started-at="2020-02-14T12:28:29 IST" finished-at="2020-02-14T12:28:59 IST">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.PS.tests.SalesDetailsTest@2bbf4b8b]" name="setup" is-config="true" duration-ms="15578" started-at="2020-02-27T13:07:48 IST" finished-at="2020-02-27T13:08:03 IST">
           <params>
             <param index="0">
               <value>
@@ -22,95 +22,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="CreateCustomer()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="CreateCustomer" duration-ms="83206" started-at="2020-02-14T12:28:59 IST" finished-at="2020-02-14T12:30:22 IST">
+        <test-method status="PASS" signature="CreateCreditMemo()[pri:0, instance:com.PS.tests.SalesDetailsTest@2bbf4b8b]" name="CreateCreditMemo" duration-ms="32930" started-at="2020-02-27T13:08:03 IST" finished-at="2020-02-27T13:08:36 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateCustomer -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-02-14T12:30:22 IST" finished-at="2020-02-14T12:30:22 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="setup" is-config="true" duration-ms="11558" started-at="2020-02-14T12:30:22 IST" finished-at="2020-02-14T12:30:34 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="CreateCustomerNegative()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="CreateCustomerNegative" duration-ms="38080" started-at="2020-02-14T12:30:34 IST" finished-at="2020-02-14T12:31:12 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateCustomerNegative -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-02-14T12:31:12 IST" finished-at="2020-02-14T12:31:12 IST">
+        </test-method> <!-- CreateCreditMemo -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.PS.tests.SalesDetailsTest@2bbf4b8b]" name="tearDown" is-config="true" duration-ms="1" started-at="2020-02-27T13:08:37 IST" finished-at="2020-02-27T13:08:37 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="setup" is-config="true" duration-ms="33886" started-at="2020-02-14T12:31:12 IST" finished-at="2020-02-14T12:31:46 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="CustomerLogActivity()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="CustomerLogActivity" duration-ms="26799" started-at="2020-02-14T12:31:46 IST" finished-at="2020-02-14T12:32:13 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CustomerLogActivity -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="setup" is-config="true" duration-ms="25316" started-at="2020-02-14T12:32:13 IST" finished-at="2020-02-14T12:32:39 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-02-14T12:32:13 IST" finished-at="2020-02-14T12:32:13 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="UpdateCustomer()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="UpdateCustomer" duration-ms="20856" started-at="2020-02-14T12:32:39 IST" finished-at="2020-02-14T12:32:59 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- UpdateCustomer -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-02-14T12:33:00 IST" finished-at="2020-02-14T12:33:00 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="setup" is-config="true" duration-ms="30203" started-at="2020-02-14T12:33:00 IST" finished-at="2020-02-14T12:33:30 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="customerSearch()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="customerSearch" duration-ms="9594" started-at="2020-02-14T12:33:30 IST" finished-at="2020-02-14T12:33:40 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- customerSearch -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-02-14T12:33:40 IST" finished-at="2020-02-14T12:33:40 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeReport()[pri:0, instance:com.PS.tests.CustomerDetailsTest@33c7e1bb]" name="closeReport" is-config="true" duration-ms="478" started-at="2020-02-14T12:33:40 IST" finished-at="2020-02-14T12:33:41 IST">
+        <test-method status="PASS" signature="closeReport()[pri:0, instance:com.PS.tests.SalesDetailsTest@2bbf4b8b]" name="closeReport" is-config="true" duration-ms="302" started-at="2020-02-27T13:08:37 IST" finished-at="2020-02-27T13:08:37 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeReport -->
-      </class> <!-- com.PS.tests.CustomerDetailsTest -->
-    </test> <!-- PS Test -->
-  </suite> <!-- Suite 1 -->
+      </class> <!-- com.PS.tests.SalesDetailsTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

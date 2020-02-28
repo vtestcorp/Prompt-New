@@ -19,8 +19,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -80,10 +83,23 @@ public class Base {
 		if (Browser.equals("Chrome")) {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + prop.getProperty("chromedriver"));
-			driver = new ChromeDriver();
+			
+			
+		
+			
+			
+			
+			ChromeOptions options = new ChromeOptions();
+			options.setProxy(null);
+			driver = new ChromeDriver(options);
+			
+			//driver = new ChromeDriver(new ChromeOptions{Proxy = null}); 
+			//driver = new ChromeDriver();
+			 driver.manage().deleteAllCookies();
 			driver.get(prop.getProperty("NewURL"));
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			
 		} else if (Browser.equals("Firefox")) {
 			System.setProperty("webdriver.gecko.driver",
 					System.getProperty("user.dir") + prop.getProperty("firefoxdriver"));

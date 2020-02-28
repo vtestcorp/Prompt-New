@@ -55,7 +55,7 @@ public class SupplierDetailsTest extends Base {
 		Thread.sleep(4000);
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void CreateSupplierNegative() throws Exception {
 		Utility.logger();
 		suppDetails = new SupplierDetailsPage();
