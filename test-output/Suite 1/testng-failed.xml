@@ -1,18 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="6" guice-stage="DEVELOPMENT" name="Failed suite [Suite 1]">
-  <test thread-count="6" name="PS Test(failed)">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite 1]">
+  <parameter name="Browser" value="Chrome"/>
+  <test name="Finance Test">
     <parameter name="Browser" value="Chrome"/>
     <classes>
-      <class name="com.PS.tests.CustomersDetails">
+      <class name="com.financetest.BalanceSheetTest"/>
+      <class name="com.financetest.BusinessExpenseTest"/>
+      <class name="com.financetest.JournalsTest"/>
+      <class name="com.financetest.LedgerAccountsTest"/>
+      <class name="com.financetest.OpeningBalanceTest"/>
+      <class name="com.financetest.ProfitLossTest"/>
+      <class name="com.financetest.TrialBalanceTest"/>
+    </classes>
+  </test> <!-- Finance Test -->
+  <test name="Finance Test(failed)">
+    <parameter name="Browser" value="Chrome"/>
+    <classes>
+      <class name="com.financetest.JournalsTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="VerificationJournal"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.financetest.JournalsTest -->
+      <class name="com.financetest.OpeningBalanceTest">
+        <methods>
+          <include name="VerificationOpeningBalance"/>
+        </methods>
+      </class> <!-- com.financetest.OpeningBalanceTest -->
+      <class name="com.financetest.ProfitLossTest">
+        <methods>
+          <include name="VerificationProfitLoss"/>
+        </methods>
+      </class> <!-- com.financetest.ProfitLossTest -->
+      <class name="com.financetest.TrialBalanceTest">
+        <methods>
+          <include name="VerificationTrialBalance"/>
+          <include name="VerificationTrialBalanceAddition"/>
+        </methods>
+      </class> <!-- com.financetest.TrialBalanceTest -->
+      <class name="com.financetest.BusinessExpenseTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.financetest.BusinessExpenseTest -->
+      <class name="com.financetest.LedgerAccountsTest">
+        <methods>
+          <include name="VerificationCategory"/>
+          <include name="VerificationLedgerCreeation"/>
+          <include name="VerificationCreationLedger"/>
+          <include name="VerificationLedgerGropuCreeation"/>
+        </methods>
+      </class> <!-- com.financetest.LedgerAccountsTest -->
+      <class name="com.financetest.BalanceSheetTest">
         <methods>
           <include name="createReport"/>
-          <include name="Test"/>
-          <include name="setup"/>
-          <include name="closeReport"/>
           <include name="tearDown"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.PS.tests.CustomersDetails -->
+      </class> <!-- com.financetest.BalanceSheetTest -->
     </classes>
-  </test> <!-- PS Test(failed) -->
+  </test> <!-- Finance Test(failed) -->
 </suite> <!-- Failed suite [Suite 1] -->
